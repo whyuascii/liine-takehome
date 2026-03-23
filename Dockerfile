@@ -21,4 +21,4 @@ ENV DJANGO_SETTINGS_MODULE=config.settings.local
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "python manage.py migrate && python manage.py load_restaurants && gunicorn config.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py load_restaurants data/restaurants.csv && gunicorn config.wsgi:application --bind 0.0.0.0:8000"]
